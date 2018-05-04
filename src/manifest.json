@@ -1,8 +1,8 @@
 {
-  "name": "Page load time",
-  "version": "1.2.4",
+  "name": "The time I waste on the webz",
+  "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Displays page load time in the toolbar",
+  "description": "Displays page load time in the toolbar, and record it",
   "background": {
     "scripts": ["background.js"],
     "persistent": false
@@ -11,18 +11,22 @@
     "default_icon": "stopwatch22.png",
     "default_popup": "info.html"
   },
-  "content_scripts": [{
+  "content_scripts": [
+    {
       "matches": ["*://*/*"],
       "js": ["timer.js"]
-  }],
-  "permissions": [
-      "http://*/*",
-      "tabs",
-      "storage",
-      "webNavigation"
+    }
   ],
-  "icons": { "16": "stopwatch16.png",
-             "48": "stopwatch48.png",
-             "128": "stopwatch128.png"
-		   }
+  "permissions": [
+    "http://*/*",
+    "tabs",
+    "storage",
+    "webNavigation",
+    "activeTab"
+  ],
+  "icons": {
+    "16": "stopwatch16.png",
+    "48": "stopwatch48.png",
+    "128": "stopwatch128.png"
+  }
 }
